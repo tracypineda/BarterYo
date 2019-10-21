@@ -1,3 +1,16 @@
-.parallax-container {
-    height: "your height here";
-  }
+* {
+    box-sizing: border-box;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.container {
+    background-image: url("img/50-Beautiful-and-Minimalist-Presentation-Backgrounds-07.jpg");
+    background-image: cover;
+}
