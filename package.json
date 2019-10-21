@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/ApVen77/Project-2#readme",
   "dependencies": {
-    "sequelize": "^5.21.0"
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.21.1"
   }
 }
