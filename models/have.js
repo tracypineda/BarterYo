@@ -1,11 +1,14 @@
 module.exports = function (sequelize, DataType) {
-    
-    var Have = sequelize.define("Have", {
-        itemID: {
-            type: DataType.INTEGER,
-            allowNull: false
 
-        }, itemName: {
+    var Have = sequelize.define("Have", {
+        id: {
+            type: DataType.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
+
+        },
+        itemName: {
             type: DataType.STRING,
             allowNull: false
         },
@@ -21,8 +24,7 @@ module.exports = function (sequelize, DataType) {
 
     Have.associate = function (models) {
         Have.belongsTo(models.User, {
-            onDelete: "cascade",
-            foreignKey: {allowNull: false}
+            foreignKey: { allowNull: false }
         });
     };
     return Have;
