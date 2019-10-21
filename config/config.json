@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "barter_db",
-    "port": 3307,
+    "password": "Saludesvida2019!",
+    "database": "sequelize_barter_db",
+    "port": 3306,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

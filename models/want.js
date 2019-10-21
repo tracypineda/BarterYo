@@ -1,21 +1,21 @@
-module.exports = function (sequelize, DataType) {
+module.exports = function (sequelize, DataTypes) {
     var Want = sequelize.define("Want", {
         id: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
 
         }, itemName: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         itemDescription: {
-            type: DataType.TEXT,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         itemCategory: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         }
     });
