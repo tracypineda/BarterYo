@@ -1,15 +1,22 @@
-module.exports = function(sequelize, DataType) {
-
+module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define('User', {
-        
-        email: { 
-            type: DataType.STRING, 
-            validate: { isEmail: true } 
-        },
-
-        password: { 
-            type: DataType.STRING, 
-            allowNull: false },
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true},
+        email: { type: DataTypes.STRING, validate: { isEmail: true } },
+        password: { type: DataTypes.STRING, allowNull: false },
     });
+    User.associate = function (models) {
+        User.hasMany(models.Have, {
+            onDelete: "cascade",
+        });
+    };
+    User.associate = function (models) {
+        User.hasMany(models.Want, {
+            onDelete: "cascade",      
+        });
+    };
     return User;
 }
