@@ -1,12 +1,12 @@
-module.exports = function (sequelize, Sequelize) {
+module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define('User', {
         id: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true},
-        email: { type: Sequelize.STRING, validate: { isEmail: true } },
-        password: { type: Sequelize.STRING, allowNull: false },
+        email: { type: DataTypes.STRING, validate: { isEmail: true } },
+        password: { type: DataTypes.STRING, allowNull: false },
     });
     User.associate = function (models) {
         User.hasMany(models.Have, {
