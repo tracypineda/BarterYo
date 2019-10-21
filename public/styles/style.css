@@ -1,3 +1,40 @@
-.parallax-container {
-    height: "your height here";
-  }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/50-Beautiful-and-Minimalist-Presentation-Backgrounds-07.jpg);
+}
+
+.carousel {
+    width: 100%;
+    height: 300px;
+}
+
+.navbar {
+    background-color: #ccc;
+}
+
+.btn {
+    padding-left: 60px;
+}
+
+.form {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.footer {
+    width: 100%;
+    background-color: #ccc;
+}
+
+.navbar-center {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    line-height: 45px;
+}
