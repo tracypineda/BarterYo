@@ -1,45 +1,73 @@
+
+// Requiring our models
+var db = require("../models");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // Gets home page
-  app.get("/api/template", function(req, res) {
-    connection.query(dbQuery, function(err, result) {
-      if (err) throw err;
-      res.json(result);
+console.log("hit routes")
+  // GET route for getting all items in wants
+  app.get("/api/want", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Want.findAll({}).then(function(dbWant) {
+      // We have access to the todos as an argument inside of the callback function
+      res.json(dbWant);
     });
   });
-//Get all products
-  app.get("/api/dashboard", function(req, res) {
-    var dbQuery = "SELECT * FROM products";
-
-    connection.query(dbQuery, function(err, result) {
-      if (err) throw err;
-      res.json(result);
+  
+   // GET route for getting all of the items in have
+   app.get("/api/have", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Have.findAll({}).then(function(dbHave) {
+      // We have access to the items as an argument inside of the callback function
+      res.json(dbHave);
     });
   });
 
-   // Add a user
-   app.post("/api/sign-up", function(req, res) {
+
+
+  // POST route for saving a new item
+  app.post("/api/user", function(req, res) {
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.User.create({
+      text: req.body.text,
+      complete: req.body.complete
+    }).then(function(dbUser) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(dbUser);
+    })
+      .catch(function(err) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        res.json(err);
+      });
+  });
+  // Add a user
+  app.post("/api/signup", function (req, res) {
     console.log("user data:");
     console.log(req.body);
     user.create({
+      username: req.body.username,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
-      password: req.body.passowrd
-    }).then(function(results) {
+      password: req.body.password
+    }).then(function (results) {
       res.json(results);
     });
   });
 
-    // Delete a product 
-    app.delete("/api/product/:id", function(req, res) {
-        console.log("wants ID:");
-        console.log(req.params.id);
-        product.destroy({
-          where: {
-            id: req.params.id
-          }
-        }).then(function() {
-          res.end();
-        });
-      });
-    };
+  // Delete a product 
+  app.delete("/api/items/:id", function(req, res) {
+   
+    db.Todo.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbWant) {
+      res.json(dbWant);
+    });
+  });
+};
