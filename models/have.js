@@ -18,6 +18,9 @@ module.exports = function (sequelize, DataTypes) {
         itemCategory: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        itemPhoto: {
+            type: DataTypes.BLOB,
         }
     });
 
