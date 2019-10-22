@@ -2,7 +2,7 @@
 // =============================================================
 module.exports = function(app) {
   // Gets home page
-  app.get("/api/mainpage", function(req, res) {
+  app.get("/api/template", function(req, res) {
     connection.query(dbQuery, function(err, result) {
       if (err) throw err;
       res.json(result);
@@ -10,7 +10,7 @@ module.exports = function(app) {
   });
 //Get all products
   app.get("/api/dashboard", function(req, res) {
-    var dbQuery = "SELECT * FROM users";
+    var dbQuery = "SELECT * FROM products";
 
     connection.query(dbQuery, function(err, result) {
       if (err) throw err;

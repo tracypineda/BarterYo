@@ -9,27 +9,25 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/mainpage.handlebars"));
-  });
+    res.render("mainpage")
+  })
+  
 
   // add route loads the profilepage.html page where users can enter profile info
   app.get("/sign-up", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/sign-up.handlebars"));
+    res.render("sign-up");
   });
 
   // all route loads the barter.html page, where user posts products
   app.get("/barter", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/barter.handlebars"));
+    res.sendFile("barter");
   });
 
   // short route loads the short.html page, where short books in the db are displayed
   app.get("/dashboard", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/dashboard.handlebars"));
+    res.sendFile(path.join(__dirname, "../dashboard.handlebars"));
   });
 
-  // long route loads the long.html page, where long books in the db are displayed
-  app.get("/error", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/404.handlebars"));
-  });
+  
 
 };
