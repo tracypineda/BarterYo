@@ -14,18 +14,22 @@ module.exports = function(app) {
   
 
   // add route loads the profilepage.html page where users can enter profile info
-  app.get("/sign-up", function(req, res) {
-    res.render("sign-up");
+  app.get("/signup", function(req, res) {
+    res.render("signup");
   });
 
+  app.get("/login", function(req,res){
+res.render("login");
+  })
+
   // all route loads the barter.html page, where user posts products
-  app.get("/barter", function(req, res) {
-    res.sendFile("barter");
-  });
+  // app.get("/se", function(req, res) {
+  //   res.render("barter");
+  // });
 
   // short route loads the short.html page, where short books in the db are displayed
   app.get("/dashboard", function(req, res) {
-    res.sendFile(path.join(__dirname, "../dashboard.handlebars"));
+    res.render("dashboard");
   });
 
   
