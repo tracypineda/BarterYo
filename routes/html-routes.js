@@ -12,10 +12,9 @@ module.exports = function(app) {
     res.render("mainpage")
   })
   
-
   // add route loads the profilepage.html page where users can enter profile info
   app.get("/signup", function(req, res) {
-    res.render("signup");
+    res.render("sign-up");
   });
 
   app.get("/login", function(req,res){
@@ -23,11 +22,11 @@ res.render("login");
   })
 
   // all route loads the barter.html page, where user posts products
-  // app.get("/se", function(req, res) {
-  //   res.render("barter");
-  // });
+  app.get("/barter", function(req, res) {
+    res.render("barter");
+  });
 
-  // short route loads the short.html page, where short books in the db are displayed
+  
   app.get("/dashboard", function(req, res) {
     res.render("dashboard");
   });

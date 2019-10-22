@@ -5,9 +5,9 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
-
-  // GET route for getting all of the todos
-  app.get("/api/Want", function(req, res) {
+console.log("hit routes")
+  // GET route for getting all items in wants
+  app.get("/api/want", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Want.findAll({}).then(function(dbWant) {
       // We have access to the todos as an argument inside of the callback function
@@ -15,19 +15,19 @@ module.exports = function(app) {
     });
   });
   
-   // GET route for getting all of the todos
-   app.get("/api/Have", function(req, res) {
+   // GET route for getting all of the items in have
+   app.get("/api/have", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Have.findAll({}).then(function(dbHave) {
-      // We have access to the todos as an argument inside of the callback function
+      // We have access to the items as an argument inside of the callback function
       res.json(dbHave);
     });
   });
 
 
 
-  // POST route for saving a new todo
-  app.post("/api/users", function(req, res) {
+  // POST route for saving a new item
+  app.post("/api/user", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
@@ -45,10 +45,13 @@ module.exports = function(app) {
       });
   });
   // Add a user
-  app.post("/api/sign-up", function (req, res) {
+  app.post("/api/signup", function (req, res) {
     console.log("user data:");
     console.log(req.body);
     user.create({
+      username: req.body.username,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password
     }).then(function (results) {
@@ -57,14 +60,14 @@ module.exports = function(app) {
   });
 
   // Delete a product 
-  app.delete("/api/todos/:id", function(req, res) {
-    // We just have to specify which todo we want to destroy with "where"
+  app.delete("/api/items/:id", function(req, res) {
+   
     db.Todo.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbTodo) {
-      res.json(dbTodo);
+    }).then(function(dbWant) {
+      res.json(dbWant);
     });
   });
 };
