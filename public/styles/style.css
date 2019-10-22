@@ -3,16 +3,20 @@
 }
 
 body {
-    background-image: url(../img/50-Beautiful-and-Minimalist-Presentation-Backgrounds-07.jpg);
+    background-image: url(../img/Red\ Sunset.jpg);
+}
+
+.header {
+    background-color: whitesmoke;
+}
+
+.container {
+    background-color: #ccc
 }
 
 .carousel {
     width: 100%;
     height: 300px;
-}
-
-.navbar {
-    background-color: #ccc;
 }
 
 .btn {
@@ -26,15 +30,10 @@ body {
     transform: translatex(-50%);
 }
 
-.footer {
+.ftr {
     width: 100%;
-    background-color: #ccc;
-}
-
-.navbar-center {
     text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
+    position: center;
     line-height: 45px;
+    background-color: whitesmoke;
 }
