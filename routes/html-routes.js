@@ -14,8 +14,8 @@ module.exports = function(app) {
 
 
     // add route loads the profilepage.html page where users can enter profile info
-    app.get("/sign-up", function(req, res) {
-        res.render("sign-up");
+    app.get("/signup", function(req, res) {
+        res.render("signup");
     });
 
     // all route loads the barter.html page, where user posts products
