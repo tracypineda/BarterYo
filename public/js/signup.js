@@ -13,13 +13,13 @@ $("#signInButton").on("click", function(event) {
     firstName: $("#name").val().trim(),
     lastName: $("#lastname").val().trim(),
     email: $("#email").val().trim(),
-    password: $("#newpass").val().trim()
+    password: $("#password").val().trim()
   };
 
   console.log("newUser: " + newUser)
 
   // Send an AJAX POST-request with jQuery
-  $.post("/api/signup", newUser)
+  $.post ("/api/signup", newUser)
     // On success, run the following code
     .then(function (data) {
       // Log the data we found
@@ -31,6 +31,6 @@ $("#signInButton").on("click", function(event) {
   $("#name").val("");
   $("#lastname").val("");
   $("#email").val("");
-  $("#newpass").val("");
+  $("#password").val("");
 
 });
