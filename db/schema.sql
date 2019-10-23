@@ -8,7 +8,7 @@ VALUES ("shirt", "blue and red", "clothing"), ("computer", "very old", "electron
 INSERT INTO Wants (itemName, itemDescription, itemCategory)
 VALUES ("shirt", "blue and red", "clothing"), ("computer", "very old", "electronics"),("iPhone", "5s", "electronics");
 
-INSERT INTO Users (email, password)
+INSERT INTO Users ("username", firstName, lastName, email, password)
 VALUES ("tracypineda@gmail.com", "testing");
 
 SELECT * FROM Haves;
