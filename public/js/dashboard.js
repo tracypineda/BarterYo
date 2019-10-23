@@ -21,16 +21,21 @@ $.ajax ({
     data: newItem
 });
 
+$("#itemName").val("");
+$("#itemnDescription").val("");
+$("#itemCategory").val("");
+$("#itemPhoto").val("");
+
+
 $.ajax ({
-    url:(`/api/have`),
+    url:("/api/have"),
     method: "POST",
-    data: Haves
+    data: Have
 });
 $.ajax({
-    url:(`/api/want`),
+    url:("/api/want"),
     method: "POST",
-    data: Wants
+    data: Want
 });
-
 
 
