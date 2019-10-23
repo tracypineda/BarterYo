@@ -47,7 +47,9 @@ console.log("hit routes")
   // Add a user
   app.post("/api/signup", function (req, res) {
     console.log("user data:");
+    console.log("user info in api routes: " +req.body);
     console.log("user info in api routes: " + JSON.stringify(req.body));
+
     db.User.create({
       username: req.body.username,
       firstName: req.body.firstName,
@@ -83,7 +85,7 @@ console.log("hit routes")
   // Delete a product 
   app.delete("/api/items/:id", function(req, res) {
    
-    db.Todo.destroy({
+    db.item.destroy({
       where: {
         id: req.params.id
       }

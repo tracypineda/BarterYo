@@ -17,9 +17,9 @@ module.exports = function (app) {
   });
   // add route loads the profilepage.html page where users can enter profile info
   app.get("/login", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/signup.html")
-    );
-  });
+    //res.render("login");
+    res.sendFile(path.join(__dirname, "../views/signup.html"));
+  })
 
   // all route loads the barter.html page, where user posts products
   app.get("/barter", function (req, res) {

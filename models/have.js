@@ -19,9 +19,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        itemPhoto: {
-            type: DataTypes.BLOB,
-        }
+        // itemPhoto: {
+        //     type: DataTypes.BLOB,
+        // }
     });
 
     Have.associate = function (models) {
