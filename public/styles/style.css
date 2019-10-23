@@ -17,14 +17,15 @@ body {
   border-top: none;
 }
 .container .carousel {
-  width: 100%;
+  width: auto;
   height: 300px;
-  padding: 20px;
+  margin-bottom: 50px;
+  margin-top: none;
 }
 .container .card {
-  border: solid 5px #9797a0;
+  margin-top: 100px;
+  border: solid 10px #9797a0;
   border: linear-gradient(360deg, #9797a0 0%, #f1f6f6 100%);
-  margin: 7px;
 }
 
 .btn {

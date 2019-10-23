@@ -16,14 +16,15 @@
      border: solid 2px #ccc;
      border-top: none;
      .carousel {
-         width: 100%;
+         width: auto;
          height: 300px;
-         padding: 20px;
+         margin-bottom: 50px;
+         margin-top: none;
      }
      .card {
-         border: solid 5px rgb(151, 151, 160);
+         margin-top: 100px;
+         border: solid 10px rgb(151, 151, 160);
          border: linear-gradient(360deg, rgba(151, 151, 160, 1) 0%, rgba(241, 246, 246, 1) 100%);
-         margin: 7px;
      }
  }
  
