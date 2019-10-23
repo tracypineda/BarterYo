@@ -62,7 +62,7 @@ console.log("hit routes")
   // Delete a product 
   app.delete("/api/items/:id", function(req, res) {
    
-    db.Todo.destroy({
+    db.item.destroy({
       where: {
         id: req.params.id
       }

@@ -9,14 +9,14 @@ $("#signInButton").on("click", function(event) {
 
   // Make a new user object
   var newUser = {
-    userName: $("#username").val().trim(),
-    firstName: $("#name").val().trim(),
-    lastName: $("#lastname").val().trim(),
+    username: $("#username").val().trim(),
+    firstname: $("#name").val().trim(),
+    lastname: $("#lastname").val().trim(),
     email: $("#email").val().trim(),
     password: $("#newpass").val().trim()
   };
 
-  console.log("newUser: " + newUser)
+  console.log("newUser: " , newUser)
 
   // Send an AJAX POST-request with jQuery
   $.post("/api/signup", newUser)
@@ -27,10 +27,24 @@ $("#signInButton").on("click", function(event) {
     });
 
   // Empty each input box by replacing the value with an empty string
-  $("#userName").val("");
+  $("#username").val("");
   $("#name").val("");
   $("#lastname").val("");
   $("#email").val("");
   $("#newpass").val("");
 
 });
+
+// $("#submitButton").on("click", function(event) {
+//   //$(document).on("click," "#signInButton", function (event) {
+//     console.log("submit button on click")
+//     event.preventDefault();
+
+
+ 
+   
+//     });
+//       //empty fields//
+//       $("#subEmail").val("");
+//       $("#inputPassword").val("");
+//     });
