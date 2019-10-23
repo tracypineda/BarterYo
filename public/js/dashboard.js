@@ -14,7 +14,7 @@ $("#newItem").on("submit", function(event) {
     };
 });
 // google how to get the value of the radio button
-var type = $("#havewant `[name = ${type}]`:checked").val();
+var type = $("#havewant[name = ${type}]`:checked").val();
 $.ajax ({
     url: (`/api/${type}`),
     method: "POST",
@@ -25,6 +25,26 @@ $("#itemName").val("");
 $("#itemnDescription").val("");
 $("#itemCategory").val("");
 $("#itemPhoto").val("");
+
+    var type = $("#havewant `[name = ${type}]`:checked").val();
+​
+if ( type.toLowerCase() === "have") { 
+//Add the item to Haves table 
+​
+	$.ajax ({
+		url: (`/api/${type}`),
+		method: "POST",
+		data: newItem
+	});
+}
+else { 
+    (type === undefined) {
+        console.log("please choose a item type!");
+    }
+    
+	//perform a different Ajax call or any other action u would like it to do 
+​
+}
 
 
 $.ajax ({
