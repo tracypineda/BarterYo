@@ -3,7 +3,7 @@
 $("#newItem").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
- console.log("hello");
+//  console.log("hello");
 
     var newItem = {
         itemName: $("#itemName").val().trim(),
@@ -12,17 +12,11 @@ $("#newItem").on("click", function (event) {
         itemPhoto: $("#itemPhoto").val().trim()
     };
     console.log(newItem);
-    var type = $(`#havewant[name = ${type}]:checked`).val(); 
-    if (type.toLowerCase() === "have") {
-        //Add the item to Haves table 
-
+    var type = $("input[name = 'havewant']:checked").val(); 
         $.ajax({
             url: (`/api/${type}`),
             method: "POST",
             data: newItem
         });
-    }
-    else {
-    } 
-}
+   
 })
