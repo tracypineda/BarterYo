@@ -12,8 +12,7 @@ $("#newItem").on("click", function (event) {
         itemPhoto: $("#itemPhoto").val().trim()
     };
     console.log(newItem);
-    var type = $("#havewant" `[name = ${type}]:checked`).val();
-
+    var type = $(`#havewant[name = ${type}]:checked`).val(); 
     if (type.toLowerCase() === "have") {
         //Add the item to Haves table 
 
@@ -25,4 +24,5 @@ $("#newItem").on("click", function (event) {
     }
     else {
     } 
+}
 })
