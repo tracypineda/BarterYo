@@ -1,39 +1,54 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-image: url(../img/Red\ Sunset.jpg);
+  background-color: whitesmoke;
 }
 
-.header {
-    background-color: whitesmoke;
+.persistent {
+  background: #70707d;
+  background: linear-gradient(360deg, #70707d 0%, #aec8cd 100%);
+  border: solid 1px #ccc7;
 }
 
 .container {
-    background-color: #ccc
+  border: solid 2px #ccc;
+  border-top: none;
 }
-
-.carousel {
-    width: 100%;
-    height: 300px;
+.container .carousel {
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+}
+.container .card {
+  border: solid 5px #9797a0;
+  border: linear-gradient(360deg, #9797a0 0%, #f1f6f6 100%);
+  margin: 7px;
 }
 
 .btn {
-    padding-left: 60px;
+  padding-left: 60px;
 }
 
 .form {
-    width: 70%;
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
 }
 
-.ftr {
-    width: 100%;
-    text-align: center;
-    position: center;
-    line-height: 45px;
-    background-color: whitesmoke;
+footer .footer {
+  width: 100%;
+  line-height: 45px;
+  background: #70707d;
+  background: linear-gradient(360deg, #70707d 0%, #aec8cd 100%);
+  color: #fff;
+  border: solid 1px #ccc7;
 }
+footer .center {
+  text-align: center;
+  position: center;
+}
+
+/*# sourceMappingURL=style.css.map */

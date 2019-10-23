@@ -13,17 +13,17 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-app.engine(
-    "handlebars",
-    exphbs({
-        defaultLayout: "template"
-    })
-);
+// app.engine(
+//     "handlebars",
+//     exphbs({
+//         defaultLayout: "template"
+//     })
+// );
 app.set("view engine", "handlebars");
 
 
-require("./routes/api-routes") (app);
-require("./routes/html-routes") (app);
+require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

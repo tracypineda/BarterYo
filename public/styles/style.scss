@@ -1,0 +1,54 @@
+ * {
+     box-sizing: border-box;
+ }
+ 
+ body {
+     background-color: whitesmoke;
+ }
+ 
+ .persistent {
+     background: rgb(112, 112, 125);
+     background: linear-gradient(360deg, rgba(112, 112, 125, 1) 0%, rgba(174, 200, 205, 1) 100%);
+     border: solid 1px #ccc7
+ }
+ 
+ .container {
+     border: solid 2px #ccc;
+     border-top: none;
+     .carousel {
+         width: 100%;
+         height: 300px;
+         padding: 20px;
+     }
+     .card {
+         border: solid 5px rgb(151, 151, 160);
+         border: linear-gradient(360deg, rgba(151, 151, 160, 1) 0%, rgba(241, 246, 246, 1) 100%);
+         margin: 7px;
+     }
+ }
+ 
+ .btn {
+     padding-left: 60px;
+ }
+ 
+ .form {
+     width: 70%;
+     position: absolute;
+     left: 50%;
+     transform: translatex(-50%);
+ }
+ 
+ footer {
+     .footer {
+         width: 100%;
+         line-height: 45px;
+         background: rgb(112, 112, 125);
+         background: linear-gradient(360deg, rgba(112, 112, 125, 1) 0%, rgba(174, 200, 205, 1) 100%);
+         color: #fff;
+         border: solid 1px #ccc7;
+     }
+     .center {
+         text-align: center;
+         position: center;
+     }
+ }
