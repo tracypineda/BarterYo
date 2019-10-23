@@ -14,7 +14,7 @@ module.exports = function(app) {
   
   // add route loads the profilepage.html page where users can enter profile info
   app.get("/signup", function(req, res) {
-    res.render("sign-up");
+    res.render("signup");
   });
 
   app.get("/login", function(req,res){

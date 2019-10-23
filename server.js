@@ -13,12 +13,12 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-app.engine(
-    "handlebars",
-    exphbs({
-        defaultLayout: "template"
-    })
-);
+// app.engine(
+//     "handlebars",
+//     exphbs({
+//         defaultLayout: "template"
+//     })
+// );
 app.set("view engine", "handlebars");
 
 
