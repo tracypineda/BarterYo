@@ -48,10 +48,12 @@ console.log("hit routes")
   app.post("/api/signup", function (req, res) {
     console.log("user data:");
     console.log("user info in api routes: " +req.body);
-    user.create({
+    console.log("user info in api routes: " + JSON.stringify(req.body));
+
+    db.User.create({
       username: req.body.username,
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password
     }).then(function (results) {
@@ -59,10 +61,31 @@ console.log("hit routes")
     });
   });
 
+  app.post("/api/have", function(req,res){
+    db.Have.create({
+      itemName: req.body.itemName,
+      itemDescription: req.body.itemDescription,
+      itemCategory: req.body.itemCategory,
+      itemPhoto: "fixme"
+    }).then(function  (results){
+      res.json(results);
+    });
+  });
+  app.post("/api/want", function(req,res){
+    db.Want.create({
+      itemName: req.body.itemName,
+      itemDescription: req.body.itemDescription,
+      itemCategory: req.body.itemCategory,
+      itemPhoto: "fixme"
+    }).then(function  (results){
+      res.json(results);
+    });
+  });
+
   // Delete a product 
   app.delete("/api/items/:id", function(req, res) {
    
-    db.Todo.destroy({
+    db.item.destroy({
       where: {
         id: req.params.id
       }

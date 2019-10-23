@@ -1,12 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
 
     var Have = sequelize.define("Have", {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            autoIncrement: true,
-            primaryKey: true
-        },
+        // id: {
+        //     type:DataTypes.INTEGER,
+        //     allowNull: false,
+        //     autoIncrement: true,
+        //     primaryKey: true
+        // },
         itemName: {
             type: DataTypes.STRING,
             allowNull: false
@@ -19,9 +19,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        itemPhoto: {
-            type: DataTypes.BLOB,
-        }
+        // itemPhoto: {
+        //     type: DataTypes.BLOB,
+        // }
     });
 
     Have.associate = function (models) {
