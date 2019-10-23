@@ -4,12 +4,12 @@ $("#newItem").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
  console.log("hello");
- 
+
     var newItem = {
         itemName: $("#itemName").val().trim(),
-        itemDescription: $("itemDescription").val().trim(),
+        itemDescription: $("#itemDescription").val().trim(),
         itemCategory: $("#itemCategory").val().trim(),
-        itemPhoto: $("itemPhoto").val().trim()
+        itemPhoto: $("#itemPhoto").val().trim()
     };
     console.log(newItem);
     var type = $("#havewant" `[name = ${type}]:checked`).val();
@@ -24,4 +24,5 @@ $("#newItem").on("click", function (event) {
         });
     }
     else {
-    }//perform a different Ajax call or any other action u would like it to do 
+    } 
+})
