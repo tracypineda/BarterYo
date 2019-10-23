@@ -48,7 +48,7 @@ console.log("hit routes")
   app.post("/api/signup", function (req, res) {
     console.log("user data:");
     console.log("user info in api routes: " +req.body);
-    user.create({
+    db.User.create({
       username: req.body.username,
       firstname: req.body.firstname,
       lastname: req.body.lastname,

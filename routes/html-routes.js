@@ -19,7 +19,7 @@ module.exports = function (app) {
 
   app.get("/login", function (req, res) {
     //res.render("login");
-    res.sendFile(path.join(__dirname, "../views/login.html"));
+    res.sendFile(path.join(__dirname, "../views/signup.html"));
   })
 
   // all route loads the barter.html page, where user posts products
