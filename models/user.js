@@ -7,6 +7,12 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true},
         email: { type: DataTypes.STRING, validate: { isEmail: true } },
         password: { type: DataTypes.STRING, allowNull: false },
+        firstname: {type: DataTypes.STRING,
+        allowNull:false},
+        lastname: {type: DataTypes.STRING,
+            allowNull:false},
+        username:{type: DataTypes.STRING,
+        allowNull: false}
     });
     User.associate = function (models) {
         User.hasMany(models.Have, {
