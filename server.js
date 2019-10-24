@@ -1,11 +1,6 @@
 var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080;
-<<<<<<< HEAD
-// var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-=======
->>>>>>> 6dc2c7980aa955523690d11a15bd665717e31ae5
 //var flash = require('connect-flash');
 
 // Requiring our models for syncing
@@ -17,13 +12,6 @@ app.use(express.json());
 
 // Static directory
 app.use(express.static("public"));
-<<<<<<< HEAD
-//app.use(flash());
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-=======
->>>>>>> 6dc2c7980aa955523690d11a15bd665717e31ae5
 
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
