@@ -1,12 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
     var Have = sequelize.define("Have", {
-        // id: {
-        //     type:DataTypes.INTEGER,
-        //     allowNull: false,
-        //     autoIncrement: true,
-        //     primaryKey: true
-        // },
         itemName: {
             type: DataTypes.STRING,
             allowNull: false
@@ -24,8 +18,8 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Want.associate = function (models) {
-        Want.belongsTo(models.User, {
+    Have.associate = function (models) {
+        Have.belongsTo(models.User, {
             foreignKey: "username",
             allowNull: false
         });

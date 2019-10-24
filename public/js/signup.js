@@ -10,8 +10,8 @@ $("#signInButton").on("click", function(event) {
   // Make a new user object
   var newUser = {
     username: $("#username").val().trim(),
-    firstname: $("#name").val().trim(),
-    lastname: $("#lastname").val().trim(),
+    firstName: $("#firstname").val().trim(),
+    lastName: $("#lastname").val().trim(),
     email: $("#email").val().trim(),
     password: $("#password").val().trim()
   };
@@ -29,7 +29,7 @@ $("#signInButton").on("click", function(event) {
 
   // Empty each input box by replacing the value with an empty string
   $("#username").val("");
-  $("#name").val("");
+  $("#firstname").val("");
   $("#lastname").val("");
   $("#email").val("");
   $("#password").val("");
