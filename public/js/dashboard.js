@@ -8,7 +8,6 @@ $.ajax({
     .then(function() {
       window.location.href = "/profile";
     });
-});
 
 
 

@@ -3,7 +3,7 @@
  }
  
  body {
-     background-color: whitesmoke;
+     background: #ccc7;
  }
  
  .persistent {
@@ -23,14 +23,10 @@
          margin-top: none;
      }
      .card {
-         //margin-top: 100px;
+         margin-top: 120px;
          border: solid 10px rgb(151, 151, 160);
          border: linear-gradient(360deg, rgba(151, 151, 160, 1) 0%, rgba(241, 246, 246, 1) 100%);
      }
- }
- 
- .btn {
-     //padding-left: 60px;
  }
  
  .form {
@@ -41,6 +37,7 @@
  }
  
  footer {
+     margin-bottom: none;
      .footer {
          width: 100%;
          line-height: 45px;
