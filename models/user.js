@@ -6,7 +6,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-
         lastName: { type: DataTypes.STRING, allowNull: false },
         username: { type: DataTypes.STRING, allowNull: false },
         aboutMe: { type: DataTypes.STRING }
@@ -15,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
         models.User.hasMany(models.Have, {
             onDelete: "cascade",
         });
-
         models.User.hasMany(models.Want, {
             onDelete: "cascade",
         });
