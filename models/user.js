@@ -1,16 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define('User', {
-        // id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     autoIncrement: true,
-        //     primaryKey: true},
         email: { type: DataTypes.STRING, validate: { isEmail: true } },
         password: { type: DataTypes.STRING, allowNull: false },
         firstName: {
             type: DataTypes.STRING,
             allowNull: false
         },
+
         lastName: { type: DataTypes.STRING, allowNull: false },
         username: { type: DataTypes.STRING, allowNull: false },
         aboutMe: { type: DataTypes.STRING }
@@ -19,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
         models.User.hasMany(models.Have, {
             onDelete: "cascade",
         });
+
         models.User.hasMany(models.Want, {
             onDelete: "cascade",
         });

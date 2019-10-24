@@ -1,12 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
     var Want = sequelize.define("Want", {
-        // id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     autoIncrement: true,
-        //     primaryKey: true
-
-        // }, 
         itemName: {
             type: DataTypes.STRING,
             allowNull: false
@@ -18,8 +11,12 @@ module.exports = function(sequelize, DataTypes) {
         itemCategory: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        UserId: {
+            type: DataTypes.INTEGER
         }
     });
+
 
     Want.associate = function(models) {
         models.Want.belongsTo(models.User, {
@@ -28,3 +25,4 @@ module.exports = function(sequelize, DataTypes) {
     };
     return Want;
 };
+

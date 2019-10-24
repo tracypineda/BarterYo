@@ -1,4 +1,29 @@
 // add a Want
+console.log("hello");
+$.ajax({
+    method: "GET",
+    url: "/api/user",
+    data: user
+  })
+    .then(function() {
+      window.location.href = "/profile";
+    });
+});
+
+
+
+
+// $.ajax({
+//     method: "GET",
+//     url: "/api/user",
+//     data: ser
+// }).then(function(response) {
+//       var results = response.data;
+//       console.log(results);
+//       $("#profilename").val(response.data.username);
+//     });
+
+// SELECT * FROM Users WHERE username = 
 
 $(document).ready(function() {
     if (!isAuthenticated()) {
@@ -50,7 +75,9 @@ $("#newItem").on("click", function(event) {
         itemName: $("#itemName").val().trim(),
         itemDescription: $("#itemDescription").val().trim(),
         itemCategory: $("#itemCategory").val().trim(),
+
         UserId: getAuthentication().id
+
     };
     var type = $("input[name='havewant']:checked").val();
     if (type) {
