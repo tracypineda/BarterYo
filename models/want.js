@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
     var Want = sequelize.define("Want", {
         // id: {
         //     type: DataTypes.INTEGER,
@@ -21,10 +21,10 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-Want.associate = function (models) {
-    Want.belongsTo(models.User, {
-        foreignKey: {allowNull: false}
-    });
+    Want.associate = function(models) {
+        models.Want.belongsTo(models.User, {
+            foreignKey: { allowNull: false }
+        });
+    };
+    return Want;
 };
-return Want;
-};      

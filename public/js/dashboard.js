@@ -19,27 +19,48 @@ $(document).ready(function() {
         }
         $("#userName").html(`${response.firstName} ${response.lastName}`)
 
-        console.log(response);
+        $("#aboutMe").html(response.aboutMe);
+        if (response.Haves) {
+            var html = "";
+            response.Haves.forEach(function(v) {
+                html += `<tr><td>${v.itemName}</td><td>${v.itemDescription}</td></tr>`
+            })
+            $("#have tbody").html(html);
+        }
+
+
+        if (response.Wants) {
+            var html = "";
+            response.Wants.forEach(function(v) {
+                html += `<tr><td>${v.itemName}</td><td>${v.itemDescription}</td></tr>`
+            })
+            $("#want tbody").html(html);
+        }
     });
 })
 
 $("#newItem").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    //  console.log("hello");
 
+    if (!isAuthenticated()) {
+        return;
+    }
     var newItem = {
         itemName: $("#itemName").val().trim(),
         itemDescription: $("#itemDescription").val().trim(),
         itemCategory: $("#itemCategory").val().trim(),
-        itemPhoto: $("#itemPhoto").val().trim()
+        UserId: getAuthentication().id
     };
-    console.log(newItem);
-    var type = $("input[name = 'havewant']:checked").val();
-    $.ajax({
-        url: (`/api/${type}`),
-        method: "POST",
-        data: newItem
-    });
+    var type = $("input[name='havewant']:checked").val();
+    if (type) {
+        $.ajax({
+            url: (`/api/${type}`),
+            method: "POST",
+            data: newItem
+        }).then(function() {
+            location.reload();
+        });
+    }
 
 })

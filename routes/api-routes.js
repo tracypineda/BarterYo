@@ -18,11 +18,31 @@ module.exports = function(app) {
     });
 
     // GET route for getting all of the items in have
-    app.get("/api/have", function(req, res) {
-        // findAll returns all entries for a table when used with no options
-        db.Have.findAll({}).then(function(dbHave) {
-            // We have access to the items as an argument inside of the callback function
-            res.json(dbHave);
+    app.get("/api/have/:userId?", function(req, res) {
+        if (!req.params.userId) {
+            // findAll returns all entries for a table when used with no options
+            db.Have.findAll({}).then(function(dbHave) {
+                res.json(dbHave);
+            });
+        } else {
+            db.Have.findAll({
+                where: {
+                    userId: req.params.userId
+                }
+            }).then(function(dbHave) {
+                res.json(dbHave);
+            })
+        }
+    });
+
+    app.post("/api/have", function(req, res) {
+        db.Have.create({
+            itemName: req.body.itemName,
+            itemDescription: req.body.itemDescription,
+            itemCategory: req.body.itemCategory,
+            UserId: req.body.UserId
+        }).then(function(results) {
+            res.json(results);
         });
     });
 
@@ -31,40 +51,19 @@ module.exports = function(app) {
             where: {
                 id: req.params.id
             },
-            attributes: ['id', 'firstName', 'lastName', 'email', 'username']
+            attributes: { exclude: ['password'] },
+            include: [
+                { model: db.Have },
+                { model: db.Want }
+            ]
         }).then(function(results) {
+            console.log(results);
             res.json(results);
         });
     });
 
-    app.get("/api/user/:id", function(req,res){
-        
-    })
-
-    // POST route for saving a new item
-    app.post("/api/user", function(req, res) {
-        // create takes an argument of an object describing the item we want to
-        // insert into our table. In this case we just we pass in an object with a text
-        // and complete property (req.body)
-        db.User.create({
-                text: req.body.text,
-                complete: req.body.complete
-            }).then(function(dbUser) {
-                // We have access to the new todo as an argument inside of the callback function
-                res.json(dbUser);
-            })
-            .catch(function(err) {
-                // Whenever a validation or flag fails, an error is thrown
-                // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-                res.json(err);
-            });
-    });
     // Add a user
     app.post("/api/signup", function(req, res) {
-        console.log("user data:");
-        console.log("user info in api routes: " + req.body);
-        console.log("user info in api routes: " + JSON.stringify(req.body));
-
         var hash = crypto.createHash('sha256').update(req.body.password).digest('base64');
 
         db.User.create({
@@ -72,7 +71,8 @@ module.exports = function(app) {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            password: hash
+            password: hash,
+            aboutMe: req.body.aboutMe
         }).then(function(results) {
             res.json(results);
         });
@@ -102,22 +102,13 @@ module.exports = function(app) {
         })
     });
 
-    app.post("/api/have", function(req, res) {
-        db.Have.create({
-            itemName: req.body.itemName,
-            itemDescription: req.body.itemDescription,
-            itemCategory: req.body.itemCategory,
-            itemPhoto: "fixme"
-        }).then(function(results) {
-            res.json(results);
-        });
-    });
+
     app.post("/api/want", function(req, res) {
         db.Want.create({
             itemName: req.body.itemName,
             itemDescription: req.body.itemDescription,
             itemCategory: req.body.itemCategory,
-            itemPhoto: "fixme"
+            UserId: req.body.UserId
         }).then(function(results) {
             res.json(results);
         });
