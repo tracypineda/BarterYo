@@ -25,10 +25,32 @@ $.ajax({
 
 // SELECT * FROM Users WHERE username = 
 
-$("#newItem").on("click", function (event) {
+$(document).ready(function() {
+    if (!isAuthenticated()) {
+        location.href = "/signup";
+        return;
+    }
+
+    $.ajax({
+        url: "/api/user/" + getAuthentication().id,
+        method: "GET",
+        beforeSend: function(header) {
+            header.setRequestHeader("x-access-token", getAuthToken());
+        }
+    }).then(function(response) {
+        if (!response) {
+            console.log("Error finding user");
+            return;
+        }
+
+        console.log(response);
+    });
+})
+
+$("#newItem").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-//  console.log("hello");
+    //  console.log("hello");
 
     var newItem = {
         itemName: $("#itemName").val().trim(),
@@ -38,11 +60,11 @@ $("#newItem").on("click", function (event) {
         UserId: $("#UserId").val().trim()
     };
     console.log(newItem);
-    var type = $("input[name = 'havewant']:checked").val(); 
-        $.ajax({
-            url: (`/api/${type}`),
-            method: "POST",
-            data: newItem
-        });
-   
+    var type = $("input[name = 'havewant']:checked").val();
+    $.ajax({
+        url: (`/api/${type}`),
+        method: "POST",
+        data: newItem
+    });
+
 })
