@@ -44,6 +44,18 @@ console.log("hit routes")
         res.json(err);
       });
   });
+  app.get("/api/user", function(req, res){
+    // var usId = req.session.passport.user.id;
+    // console.log(usId);
+    console.log("inside database");
+    db.User.findOne({
+      where: { id: '1' }
+     }).then(function (results) {
+      res.json(
+      JSON.stringify(results));
+      console.log(results);
+     });
+  });
   // Add a user
   app.post("/api/signup", function (req, res) {
     console.log("user data:");

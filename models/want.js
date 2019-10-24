@@ -12,15 +12,16 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        username: {
-            type: DataTypes.STRING
+        UserId: {
+            type: DataTypes.INTEGER
         }
     });
 
     Want.associate = function (models) {
         Want.belongsTo(models.User, {
-            foreignKey: "username",
+            foreignKey: {
             allowNull: false
+        }
         });
     };
     return Want;
