@@ -32,11 +32,7 @@
                             </li>
 
                             <li>
-                                <a class="nav-link" href="/signup"> Sign Up </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="/login"> Login</a>
+                                <a class="nav-link" href="/profile"> Profile </a>
                             </li>
 
                             <li class="nav-item">
@@ -50,26 +46,73 @@
     </header>
 
     <div class="container">
-        <div class="card" style="width: 18rem;">
-            <img src="images/image.webp" class="card-img-top" alt="dummy-img">
-            <div class="card-body">
-                <h5 class="card-title" id="userName"></h5>
-                <p class="card-text">Poor millennial looking to barter and not buy. Checkout my haves to see if you want to barter. </p>
-            </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/image.webp" class="card-img-top" alt="dummy-img">
+                    <div class="card-body">
+                        <h5 class="card-title" id="userName"></h5>
+                        <p class="card-text" id="aboutMe"></p>
+                    </div>
+                </div>
 
-            <div class="card-body">
-                <a href="barter" class="card-link">Haves</a>
-                <a href="#" class="card-link">Wants</a>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Have</h4>
+                        <div id="have">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Want</h4>
+                        <div id="want" class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="have/want">
-
-            <br>
-            <br>
-
-
+        <br /><br />
+        <div id="additem">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Add New Have / Want</h4>
+                </div>
+            </div>
             <form>
+                <div class="form-group row">
+                    <label for="havewant" class="col-sm-2 col-form-label">Item Type</label>
+                    <div class="col-sm-10">
+                        <label for="have">Have </label>
+                        <input id="have" type="radio" name="havewant" value="have">
+                        <label for="want">Want</label>
+                        <input id="want" type="radio" name="havewant" value="want">
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label for="itemName" class="col-sm-2 col-form-label">Item Name</label>
                     <div class="col-sm-10">
@@ -82,19 +125,7 @@
                         <input type="category" class="form-control" id="itemCategory" placeholder="Category">
                     </div>
                 </div>
-                <form>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Item Image</label>
-                        <input type="file" class="form-control-file" id="itemPhoto">
-                    </div>
-                </form>
-                <div id="havewant">
-                    <p>Item Type</p>
-                    <label for="have"> Have </label>
-                    <input id="have" type="radio" name="havewant" value="have">
-                    <label for="want">Want</label>
-                    <input id="want" type="radio" name="havewant" value="want">
-                </div>
+
                 <div class="form-group">
                     <label for="itemDescription">Item Description</label>
                     <textarea class="form-control" id="itemDescription" rows="3"></textarea>

@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
     <title>Project Two</title>
@@ -25,23 +26,16 @@
                 <nav>
                     <div class="navbar">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
-                                </li>
-                                <a class="nav-link" href="/signup">Sign Up</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/login">Login</a>
+                                <a class="nav-link" href="/profile">Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/barter">Barter</a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="search">
-                        <button name="search" type="submit" class="btn btn-light">Search</button>
-                        <insert class="textarea"></insert>
                     </div>
                 </nav>
             </nav>
@@ -49,71 +43,15 @@
     </header>
 
     <div class="container">
-
-        <br>
-        <br>
-        <br>
-        <div class="card-group">
-            <div class="card">
-                <img src="images/images.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Item</h5>
-                    <p class="card-text">A little bit about the item.</p>
-                    <p class="card-text"><small class="text-muted">Last updated...</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/iphone_11_pro_max_afp_new_1568185633865.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Item</h5>
-                    <p class="card-text">A little bit about the item.</p>
-                    <p class="card-text"><small class="text-muted">Last updated...</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/Capture.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Item</h5>
-                    <p class="card-text">A little bit about the item.</p>
-                    <p class="card-text"><small class="text-muted">Last updated...</small></p>
-                </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search...">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="searchBtn">Search</button>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="card-group">
-            <div class="card">
-                <img src="images/camera-coffee-cup-705164.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Item</h5>
-                    <p class="card-text">A little bit about the item.</p>
-                    <p class="card-text"><small class="text-muted">Last updated...</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/toys.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Item</h5>
-                    <p class="card-text">A little bit about the item.</p>
-                    <p class="card-text"><small class="text-muted">Last updated...</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/accessories-adorable-baby-325867.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Item</h5>
-                    <p class="card-text">A little bit about the item.</p>
-                    <p class="card-text"><small class="text-muted">Last updated...</small></p>
-                </div>
-            </div>
+        <div class="card-columns" id="itemList">
+
         </div>
-        <br>
-        <br>
-        <br>
-
-
-
     </div>
 
     <footer class="footer ftr navbar-center">

@@ -11,7 +11,8 @@ $("#signUpButton").on("click", function(event) {
         firstName: $("#name").val().trim(),
         lastName: $("#lastname").val().trim(),
         email: $("#email").val().trim(),
-        password: $("#password").val().trim()
+        password: $("#password").val().trim(),
+        aboutMe: $("#aboutMe").val().trim()
     };
 
     // Send an AJAX POST-request with jQuery
@@ -28,6 +29,7 @@ $("#signUpButton").on("click", function(event) {
     $("#lastname").val("");
     $("#email").val("");
     $("#password").val("");
+    $("#aboutMe").val("");
 });
 
 $("#signInButton").on("click", function(event) {

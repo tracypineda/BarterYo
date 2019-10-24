@@ -1,24 +1,25 @@
-// Make a get request to our api route that will return every item
-$.get("/api/have", function(data) {
-    // For each item that our server sends us back
-    for (var i = 0; i < data.length; i++) {
-      // Create a parent div to hold item data
-      var itemData = $("<div>");
-      // Add a class to this div: 'well'
-      itemData.addClass("product");
-      // Add an id to the well to mark which well it is
-      itemData.attr("want" + i);
-      // Append the well to the well section
-      $("#itemData").append(itemSection);
-  
-      // Now  we add our have  data to be placed on the page
-      $("#id-" + i).append("<h2>" + (i + 1) + ". " + data[i].userId + "</h2>");
-      $("#itemname-" + i).append("<h3>item: " + data[i].item + "</h4>");
-      $("#itemdescription-" + i).append("<h3>description: " + description[i].genre + "</h4>");
-      $("#itemCatergory-" + i).append("<h3>Catergory: " + data[i].catergory + "</h4>");
+$(document).ready(function() {
+    if (!isAuthenticated()) {
+        location.href = "/signup";
+        return;
     }
-  });
-  id 
-  itemname
-  itemdescription
-  itemCategory
+
+    $.ajax({
+        url: "/api/have",
+        method: "GET",
+        beforeSend: function(header) {
+            header.setRequestHeader("x-access-token", getAuthToken());
+        }
+    }).then(function(response) {
+        response.forEach(function(v) {
+            $("#itemList").append(`<div class="card" style="width: 20rem">
+              <img src="http://via.placeholder.com/150" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">${v.itemName}</h5>
+                  <p class="card-text">${v.itemDescription}</p>
+                  <p class="card-text"><small class="text-muted">Last updated ${moment(v.updatedAt).fromNow()}</small></p>
+              </div>
+          </div>`)
+        });
+    });
+});
