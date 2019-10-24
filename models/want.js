@@ -17,7 +17,6 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-
     Want.associate = function(models) {
         models.Want.belongsTo(models.User, {
             foreignKey: { allowNull: false }
@@ -25,4 +24,3 @@ module.exports = function(sequelize, DataTypes) {
     };
     return Want;
 };
-

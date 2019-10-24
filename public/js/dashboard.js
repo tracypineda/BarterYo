@@ -8,7 +8,6 @@ $.ajax({
     .then(function() {
       window.location.href = "/profile";
     });
-});
 
 
 
@@ -75,9 +74,7 @@ $("#newItem").on("click", function(event) {
         itemName: $("#itemName").val().trim(),
         itemDescription: $("#itemDescription").val().trim(),
         itemCategory: $("#itemCategory").val().trim(),
-
         UserId: getAuthentication().id
-
     };
     var type = $("input[name='havewant']:checked").val();
     if (type) {

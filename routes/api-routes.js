@@ -79,7 +79,7 @@ module.exports = function(app) {
     });
 
     app.post("/api/login", function(req, res) {
-        console.log(req.body.email, req.body.password);
+        console.log(req.body.email, revq.body.password);
         var email = req.body.email;
         var password = req.body.password;
         var hash = crypto.createHash('sha256').update(password).digest('base64');
