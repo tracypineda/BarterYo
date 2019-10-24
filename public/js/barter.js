@@ -13,7 +13,7 @@ $(document).ready(function() {
     }).then(function(response) {
         response.forEach(function(v) {
             $("#itemList").append(`<div class="card" style="width: 20rem">
-              <img src="http://via.placeholder.com/150" class="card-img-top" alt="...">
+              <img src="https://www.kwikot.com/wp-content/uploads/2017/10/Image-Coming-Soon-Placeholder.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                   <h5 class="card-title">${v.itemName}</h5>
                   <p class="card-text">${v.itemDescription}</p>
