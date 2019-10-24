@@ -42,6 +42,7 @@ $(document).ready(function() {
             console.log("Error finding user");
             return;
         }
+        $("#userName").html(`${response.firstName} ${response.lastName}`)
 
         console.log(response);
     });
