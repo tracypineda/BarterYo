@@ -11,18 +11,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link type="stylesheet" href="styles/style.sass">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Project Two</title>
+    <script src="js/auth.js"></script>
 </head>
 
-
 <body>
-
-
     <header class="persistent">
         <nav>
-
-
             <nav class="navbar navbar-expand-lg navbar-light justify-content-end">
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,17 +42,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/barter">Barter</a>
                             </li>
-
+                        </ul>
+                    </div>
                 </nav>
+            </nav>
+        </nav>
     </header>
 
     <div class="container">
-
-
         <div class="card" style="width: 18rem;">
             <img src="images/image.webp" class="card-img-top" alt="dummy-img">
             <div class="card-body">
-                <h5 class="card-title">Doug Jones</h5>
+                <h5 class="card-title" id="userName"></h5>
                 <p class="card-text">Poor millennial looking to barter and not buy. Checkout my haves to see if you want to barter. </p>
             </div>
 
@@ -81,17 +78,8 @@
                 </div>
                 <div class="form-group row">
                     <label for="category" class="col-sm-2 col-form-label">Category</label>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Category
-                            </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Clothing & Accessories</button>
-                            <button class="dropdown-item" type="button">Home & Garden</button>
-                            <button class="dropdown-item" type="button">Electronics</button>
-                            <button class="dropdown-item" type="button">Toys</button>
-                            <button class="dropdown-item" type="button">Miscellaneous</button>
-                        </div>
+                    <div class="col-sm-10">
+                        <input type="category" class="form-control" id="itemCategory" placeholder="Category">
                     </div>
                 </div>
                 <form>
@@ -119,6 +107,7 @@
             </form>
 
         </div>
+
     </div>
 
     <footer class="footer ftr navbar-center">
@@ -131,15 +120,17 @@
             <nav>
                 <div class="navbar">
                     <ul class="navbar-nav mr-auto justify-content-center">
-                        <li class="nav-item active">
+                        <ul class="navbar-nav mr-auto justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Arielle Collins</a>
+                                <a class="nav-link" href="http://www.github.com/">Arielle Collins</a>
                             </li>
-                            <a class="nav-link" href="/signup">April Long</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">Tracy Pineda</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.github.com/">April Long</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.github.com/">Tracy Pineda</a>
+                            </li>
+                        </ul>
                     </ul>
                 </div>
             </nav>
@@ -148,7 +139,7 @@
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="./js/profile.js"></script>
+    <script src="./js/dashboard.js"></script>
 </body>
 
 </html>
