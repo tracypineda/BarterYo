@@ -9,7 +9,8 @@ $("#newItem").on("click", function (event) {
         itemName: $("#itemName").val().trim(),
         itemDescription: $("#itemDescription").val().trim(),
         itemCategory: $("#itemCategory").val().trim(),
-        itemPhoto: $("#itemPhoto").val().trim()
+        itemPhoto: $("#itemPhoto").val().trim(),
+        username: $("#username").val().trim()
     };
     console.log(newItem);
     var type = $("input[name = 'havewant']:checked").val(); 

@@ -19,14 +19,15 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        // itemPhoto: {
-        //     type: DataTypes.BLOB,
-        // }
+        username: {
+            type: DataTypes.STRING
+        }
     });
 
-    Have.associate = function (models) {
-        Have.belongsTo(models.User, {
-            foreignKey: { allowNull: false }
+    Want.associate = function (models) {
+        Want.belongsTo(models.User, {
+            foreignKey: "username",
+            allowNull: false
         });
     };
     return Have;

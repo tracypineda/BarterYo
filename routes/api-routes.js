@@ -66,7 +66,8 @@ console.log("hit routes")
       itemName: req.body.itemName,
       itemDescription: req.body.itemDescription,
       itemCategory: req.body.itemCategory,
-      itemPhoto: "fixme"
+      itemPhoto: "fixme",
+      username: req.body.username
     }).then(function  (results){
       res.json(results);
     });
@@ -76,7 +77,8 @@ console.log("hit routes")
       itemName: req.body.itemName,
       itemDescription: req.body.itemDescription,
       itemCategory: req.body.itemCategory,
-      itemPhoto: "fixme"
+      itemPhoto: "fixme",
+      username: req.body.username
     }).then(function  (results){
       res.json(results);
     });
