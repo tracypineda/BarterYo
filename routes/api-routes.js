@@ -37,6 +37,10 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/user/:id", function(req,res){
+        
+    })
+
     // POST route for saving a new item
     app.post("/api/user", function(req, res) {
         // create takes an argument of an object describing the item we want to
