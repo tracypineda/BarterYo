@@ -18,6 +18,7 @@ $(document).ready(function() {
             return;
         }
         $("#userName").html(`${response.firstName} ${response.lastName}`)
+
         $("#aboutMe").html(response.aboutMe);
         if (response.Haves) {
             var html = "";
@@ -26,6 +27,7 @@ $(document).ready(function() {
             })
             $("#have tbody").html(html);
         }
+
 
         if (response.Wants) {
             var html = "";
