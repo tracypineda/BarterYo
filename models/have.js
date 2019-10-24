@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
 
     var Have = sequelize.define("Have", {
         itemName: {
@@ -12,17 +12,12 @@ module.exports = function (sequelize, DataTypes) {
         itemCategory: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        UserId: {
-            type: DataTypes.INTEGER
+
         }
     });
 
-    Have.associate = function (models) {
-        Have.belongsTo(models.User, {
-            foreignKey: {
-            allowNull: false}
-        });
+    Have.associate = function(models) {
+        models.Have.belongsTo(models.User);
     };
     return Have;
-};      
+};
