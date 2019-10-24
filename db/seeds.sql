@@ -1,8 +1,8 @@
-INSERT INTO Haves (itemName, itemDescription, itemCategory)
+INSERT INTO haves (itemName, itemDescription, itemCategory)
 VALUES ("shirt", "blue and red", "clothing"), ("computer", "very old", "electronics"),("iPhone", "5s", "electronics");
 
-INSERT INTO Wants (itemName, itemDescription, itemCategory)
+INSERT INTO wants (itemName, itemDescription, itemCategory)
 VALUES ("shirt", "blue and red", "clothing"), ("computer", "very old", "electronics"),("iPhone", "5s", "electronics");
 
-INSERT INTO Users (userName, firstName, lastName, email, password)
-VALUES ("tpineda", "Tracy", "Pineda", "tracypineda@gmail.com", "testing");
+INSERT INTO users (email, password, firstname, lastname, username)
+VALUES ("tracypineda@gmail.com", "root", "Tracy", "Pineda", "ironwoman");

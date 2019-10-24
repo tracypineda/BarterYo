@@ -34,4 +34,4 @@ In this app it will use a Node and Express server that is backed my sequelized a
 
 
 See on GitHub: https://github.com/ApVen77/Project-2 
-See on Heroku: 
+See on Heroku: https://git.heroku.com/barter-project-2.git

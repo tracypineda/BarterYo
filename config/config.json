@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "root",
+        "password": "Saludesvida2019!",
         "database": "sequelize_barter_db",
         "port": 3306,
         "host": "127.0.0.1",
@@ -17,12 +17,8 @@
         "operatorsAliases": false
     },
     "production": {
-        "username": "root",
-        "password": null,
-        "database": "database_production",
-        "host": "127.0.0.1",
-        "dialect": "mysql",
-        "operatorsAliases": false
+        "use_env_variable":"JAWS_DB_URL",
+        "dialect": "mysql"
     },
     "jwt_privatekey": "*privatekey*"
 }
